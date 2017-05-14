@@ -9,6 +9,10 @@ Cancer is considered one of the major challenges of humanity in the 21st century
 
 First, let's give some context to how cancer is currently being diagnosed.  Currently
 
+![CTStack](images/intro/animatedstack.gif){:class="img-responsive"}
+
+![QuizQuestion](images/intro/Quiz_5Q.png){:class="img-responsive"}
+
 ![QuizAnswer](images/intro/Quiz_5A.png){:class="img-responsive"}
 
 ## Goal
