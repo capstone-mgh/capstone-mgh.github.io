@@ -4,7 +4,7 @@
 
 Cancer is considered one of the major challenges of humanity in the 21st century. A pillar for fighting cancer is its correct diagnosis mostly based on medical imaging. Despite great progress in machineries and image resolution, typical data processing is still performed manually by a radiologist, similar to using a marker on X-ray film. Moreover, 10% of diagnoses are estimated to be erroneous even today.  Machine learning has the potential to drastically improve the accuracy, efficiency and effectiveness of disease detection, and as a result can save millions of lives. Unfortunately, despite a plethora of data available, only a small percentage of such is labeled well enough to be used for machine learning. This shortage is the bottleneck to unleashing machine learning to revolutionize medical diagnosis. Here, we present SAKÉ, an annotation framework that significantly improves this labeling process. Offering a combination of precise 3D segmentation, user-friendly interface, and cutting-edge computer vision algorithms, SAKÉ enables radiologists to quickly create standardized annotations for regions of interest in a seamless and accurate manner.
 
-## Introduction
+# Introduction
 
 Prior to being able to contribute to tackling a challenge as difficult as cancer, we first need to understand how experts are currently approaching such problems.  Medical diagnosis is currently heavily reliant on medical imaging.  Below is an example of medical imaging, a computed tomography (CT) scan of a persons lung.  The below is illustrative of a radiologist scrolling through consecutive adjacent 2D cross-sectional slices of a persons lung to effectively get a 3D representation of the patients lung.
 
@@ -12,11 +12,11 @@ Prior to being able to contribute to tackling a challenge as difficult as cancer
 
 Let's put ourselves in the shoes of a radiologist.  The doctor would likely being looking to spot a pulmonary nodule - or a growth within the lung that could potentially be malignant (i.e. cancerous).  Can you spot it?
 
-![QuizQuestion](images/intro/Quiz_5Q.png){:class="img-responsive"}
+![QuizQuestion](images/intro/Quiz_5QW.png){:class="img-responsive"}
 
 Below we see the nodule is in the bottom left corner encircled in red.
 
-![QuizAnswer](images/intro/Quiz_5A.png){:class="img-responsive"}
+![QuizAnswer](images/intro/Quiz_5AW.png){:class="img-responsive"}
 
 Clearly, a human would require considerable training to be able to distinguish between a nodule versus a blood vessel (the other small white objects). However, Computational Science should be able to improve this process. Specifically, by using applying fields such as Machine Learning and Data Science, we should be able to save time, resources, and lives.  In particular, using machine learning would be aggregating the knowledge of thousands of doctors with their years of experience and applying such for each and every diagnosis.  This should drastically improve accuracy and inevitably save lives.
 
@@ -30,7 +30,7 @@ Hence our team seeks to contribute to the field of medical diagnosis by building
 
 #PLACEHOLDER: GIF of WEAK DATA -> STRONG DATA
 
-## Goal
+# Goal
 
 With a firm understanding of the current state of medical  form Saké - a precise, fast, and standardized web-based medical imaging annotation framework.  Our ambitious mission is to revolutionize medical diagnosis through machine learning by generating high-quality medical data.
 
@@ -47,13 +47,13 @@ With these specifications, we develop the below schematic as a guide for how to 
 
 Crucial in our design is that each of the three major components communicate through well-defined interfaces and can be independently exchanged.  This will allow for the framework to be constantly improved.
 
-## Implementation
+# Implementation
 
 Let's have closer look the specifications and implementation of the three main components of Saké.
 
-### Image Database Server
+## Image Database Server
 
-#### Specifications
+### Specifications
 
 - Ability to store and retrieve a variety of medical images (X-rays, MRIs, CT scans, etc.) and corresponding metadata
 - DICOM (Digital Imaging and Communications in Medicine): The international standard for medical images and related information, allows for image type flexibility
@@ -61,42 +61,42 @@ Let's have closer look the specifications and implementation of the three main c
 
 #PLACEHOLDER: Image Database with XRAY, MRI,CT - need to create a new image
 
-#### Implementation
+### Implementation
 
 - Images stored on Google Cloud, metadata (ordering of stack, patient info, etc) pre-generated through Python script
 - Focus on Lung CT scans due to 1) partner interest 2) problem severity (200k+ new cases in US each year) 3) problem complexity (compared to other medical diagnosis problems, this appears more tractable) 
 
-### Viewer
+## Viewer
 
-#### Specifications
+### Specifications
 
 - Accessible for radiologists across the globe
 - Standardized, easy-to-use annotation framework 
 - Automated segmentation and propagation to adjacent slices. 
 - Precise fine-tuning of the segments.
 
-#### Implementation
+### Implementation
 
 - Investigated Platforms: Stanford’s EPAD, Osirix, Dana Farber’s Imaging Platform
 - Decided on: OHIF Viewer (Open Health Imaging Foundation)
 
-### Smart Server
+## Smart Server
 
-#### Specifications
+### Specifications
 
 - Backend of segmentation process for the viewer
 - Machine Learning pipeline that can be easily upgraded,  assists doctors in detecting ROIs
 - Javascript and HTML5 canvas API
 - Communicates with REST backend on the ML server via AJAX requests
 
-#### Implementation: Segmentation
+### Implementation: Segmentation
 
 - Recursive flood-fill algorithm that takes in a seed point and expands the boundaries of an annotation until reaching a given threshold. 2D ROI is propagated to adjacent 2D images on the Z-axis. 
-- **Inspiration:** William Gray Roncal, VESICLE: Volumetric Evaluation of Synaptic Interfaces using Computer vision at Large Scale
+- **Inspiration:** William Gray Roncal, *VESICLE: Volumetric Evaluation of Synaptic Interfaces using Computer vision at Large Scale*
 
 ![segmentation algorithm](images/implementation/segment.gif){:class="img-responsive"}
 
-## Data / Machine Learning
+# Data / Machine Learning
 
 The last feature to be added is the Machine Learning pipeline.  However Saké is the framework that will enable the generation of the data that can be fed into the ML algorithms.  This forces us to look for data of comparable to quality to the data Saké will produce.  The National Cancer Institute (NCI) offers DICOM representations of lung cancer screening CT scans and XML-stored pixelwise annotations.  After significant cleaning of the 124GBs of data, we found the dataset contains 725 patients, 1,201 nodules, and 7,274 region of interest (ROI).
 
@@ -106,15 +106,15 @@ We next visualize the data and find that 1) larger nodules tend to be more likel
 
 With ML-usable data now available, we proceed in producing a ML pipeline
 
-### Smart Server
+## Smart Server
 
-#### Implementation: Machine Learning
+### Implementation: Machine Learning
 
 - Computes percentiles that the area and location of each ROI falls within using multivariate kernel density estimation. 
  - Predicts the probability that a nodule is malignant based off its shape. Approach involves 3-D convolutional neural network that detects the contours of each annotation.
 - **Inspiration:** Olaf Ronneberger, Philipp Fischer, Thomas Brox, U-Net: Convolutional Networks for Biomedical Image Segmentation 
 
-## Demo
+# Demo
 
 To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.json) or [demo stack 2](http://104.198.43.42/stack2.json).
 
@@ -136,7 +136,7 @@ To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.jso
 - The **Save** button will send all the polygon segments back to the server.
 - Dragging a vertex off the slice will delete the whole 3D segment.
 
-## Conclusion
+# Conclusion
 
 In summary, we made critical enhancements to the open-source annotation platform OHIF, including adding automated 3D segmentation and a Machine Learning pipeline.  The new features will expedite the generation of a dataset that will enable Object Detection algorithms to significantly improve the medical diagnostic procedure both in time and accuracy.  We look forward to radiologists using the new framework in the near future.
 
