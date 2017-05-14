@@ -1,6 +1,6 @@
 ![logos](images/logos.png)
 
-## Abstract
+# Abstract
 
 Cancer is considered one of the major challenges of humanity in the 21st century. A pillar for fighting cancer is its correct diagnosis mostly based on medical imaging. Despite great progress in machineries and image resolution, typical data processing is still performed manually by a radiologist, similar to using a marker on X-ray film. Moreover, 10% of diagnoses are estimated to be erroneous even today.  Machine learning has the potential to drastically improve the accuracy, efficiency and effectiveness of disease detection, and as a result can save millions of lives. Unfortunately, despite a plethora of data available, only a small percentage of such is labeled well enough to be used for machine learning. This shortage is the bottleneck to unleashing machine learning to revolutionize medical diagnosis. Here, we present SAKÉ, an annotation framework that significantly improves this labeling process. Offering a combination of precise 3D segmentation, user-friendly interface, and cutting-edge computer vision algorithms, SAKÉ enables radiologists to quickly create standardized annotations for regions of interest in a seamless and accurate manner.
 
@@ -36,10 +36,10 @@ With a firm understanding of the current state of medical  form Saké - a precis
 
 To make this dream a reality, we work with MGH to determine the below specifications of this framework:
 
--Ability to store, retrieve, and view a range of medical images and corresponding metadata
--Accessible for radiologists across the globe
--Standardized, easy-to-use annotation framework
--Machine Learning pipeline that can be easily upgraded.  Assists doctors in detecting regions of interests (ROIs).
+- Ability to store, retrieve, and view a range of medical images and corresponding metadata
+- Accessible for radiologists across the globe
+- Standardized, easy-to-use annotation framework
+- Machine Learning pipeline that can be easily upgraded.  Assists doctors in detecting regions of interests (ROIs).
 
 With these specifications, we develop the below schematic as a guide for how to progress:
 
@@ -49,7 +49,36 @@ Crucial in our design is that each of the three major components communicate thr
 
 ## Implementation
 
+Let's closer look at each of the three main components of Saké
 
+### Image Database Server
+
+#### Specifications
+
+- Ability to store and retrieve a variety of medical images (X-rays, MRIs, CT scans, etc.) and corresponding metadata
+- DICOM (Digital Imaging and Communications in Medicine): The international standard for medical images and related information.
+-  Images accessible to various users across the globe
+
+#PLACEHOLDER: Image Database with XRAY, MRI,CT - need to create a new image
+
+#### Implementation
+
+- Images stored on Google Cloud, metadata  (ordering of stack, patient info, etc) pre-generated in Python
+- Focus on Lung CT scans due to 1) partner interest 2) problem severity (200k+ new cases in US each year) 3) problem complexity (compared to other medical diagnosis problems, this appears more tractable) 
+
+### Viewer
+
+#### Specifications
+
+- Accessible for radiologists across the globe
+- Standardized, easy-to-use annotation framework 
+- Automated segmentation and propagation to adjacent slices. 
+- Precise fine-tuning of the segments.
+
+#### Implementation
+
+- Investigated Platforms: Stanford’s EPAD, Osirix, Dana Farber’s Imaging Platform
+- Decided on: OHIF Viewer (Open Health Imaging Foundation)
 
 ## Data / Machine Learning
 
