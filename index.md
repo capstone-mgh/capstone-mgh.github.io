@@ -6,22 +6,45 @@ Cancer is considered one of the major challenges of humanity in the 21st century
 
 ## Introduction
 
-First, let's give some context to how cancer is currently being diagnosed.  Doctors heavily rely on medical imaging for 
+
+First, let's give some context to how cancer is currently being diagnosed.  Currently
 
 ![QuizAnswer](images/intro/Quiz_5A.png){:class="img-responsive"}
 
-## Goal 
+## Goal
 
 ## Implementation
+
+
 
 ## Data / Machine Learning
 
 ## Demo
 
+To see SAKE in action, check out [demo stack 1](http://104.198.43.42/stack1.json) or [demo stack 2](http://104.198.43.42/stack2.json).
+
+### Tips for navigating the OHIF viewer
+- Scroll wheel or up/down arrows to view different slices.
+- Right click and drag to zoom in and out.
+- Middle click and drag to pan.
+
+### Creating a segmentation with SAKE
+1. Click the **Segment** button to activate the tool.
+1. Click on region of interest. The plugin will fill out the bounding polygon.
+1. Drag the center sqaure up and down to adjust the threshold of the algorithm.
+1. Drag individual vertices to fine tune the polygon.
+1. Scroll through the slices to propagate segmentation in 3D.
+
+### SAKE tips
+- The maximum area of a segment has been capped. The tool rejects attempts to click on a large region or to increase the threshold too much.
+- Thresholds are propagated only to unseen slices. Adjust the threshold before scrolling to nearby slices to propagate the threshold.
+- The **Save** button will send all the polygon segments back to the server.
+- Dragging a vertex off the slice will delete the whole 3D segment.
+
 ## Conclusion
 
 
-{% comment %} 
+{% comment %}
 Overview​: Provide an overview of the project. It is important that you include a
 general context for and an overall description of as well as any introductory information
 that’s specific to the project.
