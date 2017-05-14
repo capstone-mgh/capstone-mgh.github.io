@@ -6,7 +6,7 @@ Cancer is considered one of the major challenges of humanity in the 21st century
 
 ## Introduction
 
-First, let's give some context to how cancer is currently being diagnosed.  Currently 
+First, let's give some context to how cancer is currently being diagnosed.  Doctors heavily rely on medical imaging for 
 
 ![QuizAnswer](images/intro/Quiz_5A.png){:class="img-responsive"}
 
