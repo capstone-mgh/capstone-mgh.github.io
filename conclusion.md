@@ -1,3 +1,5 @@
+![logos](images/logos.png)
+
 # Conclusion
 
 In summary, we made critical enhancements to the open-source annotation platform OHIF, including adding automated 3D segmentation and a Machine Learning pipeline.  The new features will expedite the generation of a dataset that will enable Object Detection algorithms to significantly improve the medical diagnostic procedure both in time and accuracy.  We look forward to radiologists using the new framework in the near future.
