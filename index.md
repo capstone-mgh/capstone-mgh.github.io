@@ -6,14 +6,19 @@ Cancer is considered one of the major challenges of humanity in the 21st century
 
 ## Introduction
 
-
-First, let's give some context to how cancer is currently being diagnosed.  Currently
+Prior to being able to contribute to tackling a challenge as difficult as cancer, we first need to understand how experts are currently approaching such problems.  Medical diagnosis is currently heavily reliant on medical images.  Below is an example of a medical image, a computed tomography (CT) scan of a persons lung.  The below is illustrative of a radiologist scrolling through consecutive 2D cross-sectional slices of a persons lung to effectively get a 3D representation of the patients lung.
 
 ![CTStack](images/intro/animatedstack.gif){:class="img-responsive"}
 
+Let's put ourselves in the shoes of a radiologist.  The doctor would likely being looking to spot a pulmonary nodule - or a growth within the lung that could potentially be malignant (i.e. cancerous).  Can you spot it?
+
 ![QuizQuestion](images/intro/Quiz_5Q.png){:class="img-responsive"}
 
+Below we see the nodule is in the bottom right corner. Clearly, a human would require considerable training to be able to distinguish between a nodule versus a blood vessel (the other small white objects). 
+
 ![QuizAnswer](images/intro/Quiz_5A.png){:class="img-responsive"}
+
+
 
 ## Goal
 
