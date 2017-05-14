@@ -14,7 +14,7 @@ Let's put ourselves in the shoes of a radiologist.  The doctor would likely bein
 
 ![QuizQuestion](images/intro/Quiz_5Q.png){:class="img-responsive"}
 
-Below we see the nodule is in the bottom left corner encircled in red. 
+Below we see the nodule is in the bottom left corner encircled in red.
 
 ![QuizAnswer](images/intro/Quiz_5A.png){:class="img-responsive"}
 
@@ -43,7 +43,7 @@ To make this dream a reality, we work with MGH to determine the below specificat
 
 With these specifications, we develop the below schematic as a guide for how to progress:
 
-#PLACEHOLDER: 3 Components schematic
+![architecture diagram](images/implementation/architecture.png){:class="img-responsive"}
 
 Crucial in our design is that each of the three major components communicate through well-defined interfaces and can be independently exchanged.  This will allow for the framework to be constantly improved.
 
@@ -79,6 +79,8 @@ Let's closer look at each of the three main components of Saké
 
 - Investigated Platforms: Stanford’s EPAD, Osirix, Dana Farber’s Imaging Platform
 - Decided on: OHIF Viewer (Open Health Imaging Foundation)
+
+![segmentation algorithm](images/implementation/segment.gif){:class="img-responsive"}
 
 ## Data / Machine Learning
 
