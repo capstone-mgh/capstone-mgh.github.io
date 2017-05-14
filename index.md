@@ -49,21 +49,21 @@ Crucial in our design is that each of the three major components communicate thr
 
 ## Implementation
 
-Let's closer look at each of the three main components of Saké
+Let's have closer look the specifications and implementation of the three main components of Saké.
 
 ### Image Database Server
 
 #### Specifications
 
 - Ability to store and retrieve a variety of medical images (X-rays, MRIs, CT scans, etc.) and corresponding metadata
-- DICOM (Digital Imaging and Communications in Medicine): The international standard for medical images and related information.
+- DICOM (Digital Imaging and Communications in Medicine): The international standard for medical images and related information, allows for image type flexibility
 -  Images accessible to various users across the globe
 
 #PLACEHOLDER: Image Database with XRAY, MRI,CT - need to create a new image
 
 #### Implementation
 
-- Images stored on Google Cloud, metadata  (ordering of stack, patient info, etc) pre-generated in Python
+- Images stored on Google Cloud, metadata (ordering of stack, patient info, etc) pre-generated through Python script
 - Focus on Lung CT scans due to 1) partner interest 2) problem severity (200k+ new cases in US each year) 3) problem complexity (compared to other medical diagnosis problems, this appears more tractable) 
 
 ### Viewer
@@ -80,27 +80,57 @@ Let's closer look at each of the three main components of Saké
 - Investigated Platforms: Stanford’s EPAD, Osirix, Dana Farber’s Imaging Platform
 - Decided on: OHIF Viewer (Open Health Imaging Foundation)
 
+### Smart Server
+
+#### Specifications
+
+- Backend of segmentation process for the viewer
+- Machine Learning pipeline that can be easily upgraded,  assists doctors in detecting ROIs
+- Javascript and HTML5 canvas API
+- Communicates with REST backend on the ML server via AJAX requests
+
+#### Implementation: Segmentation
+
+- Recursive flood-fill algorithm that takes in a seed point and expands the boundaries of an annotation until reaching a given threshold. 2D ROI is propagated to adjacent 2D images on the Z-axis. 
+- **Inspiration:** William Gray Roncal, VESICLE: Volumetric Evaluation of Synaptic Interfaces using Computer vision at Large Scale
+
 ![segmentation algorithm](images/implementation/segment.gif){:class="img-responsive"}
 
 ## Data / Machine Learning
 
+The last feature to be added is the Machine Learning pipeline.  However Saké is the framework that will enable the generation of the data that can be fed into the ML algorithms.  This forces us to look for data of comparable to quality to the data Saké will produce.  The National Cancer Institute (NCI) offers DICOM representations of lung cancer screening CT scans and XML-stored pixelwise annotations.  After significant cleaning of the 124GBs of data, we found the dataset contains 725 patients, 1,201 nodules, and 7,274 region of interest (ROI).
+
+We next visualize the data and find that 1) larger nodules tend to be more likely malignant and 2) positional trends in nodule formation.  Such visualizations and analysis are comparable to recent medical science journal articles: i) *Distribution of Solid Solitary Pulmonary Nodules within the Lungs on Computed Tomography* (2016) ii) *Probability of Cancer in Pulmonary Nodules Detected on First Screening CT* (2013).
+
+#Placeholder Data Visualizations
+
+With ML-usable data now available, we proceed in producing a ML pipeline
+
+### Smart Server
+
+#### Implementation: Machine Learning
+
+- Computes percentiles that the area and location of each ROI falls within using multivariate kernel density estimation. 
+ - Predicts the probability that a nodule is malignant based off its shape. Approach involves 3-D convolutional neural network that detects the contours of each annotation.
+- **Inspiration:** Olaf Ronneberger, Philipp Fischer, Thomas Brox, U-Net: Convolutional Networks for Biomedical Image Segmentation 
+
 ## Demo
 
-To see SAKE in action, check out [demo stack 1](http://104.198.43.42/stack1.json) or [demo stack 2](http://104.198.43.42/stack2.json).
+To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.json) or [demo stack 2](http://104.198.43.42/stack2.json).
 
 ### Tips for navigating the OHIF viewer
 - Scroll wheel or up/down arrows to view different slices.
 - Right click and drag to zoom in and out.
 - Middle click and drag to pan.
 
-### Creating a segmentation with SAKE
+### Creating a segmentation with Saké
 1. Click the **Segment** button to activate the tool.
 1. Click on region of interest. The plugin will fill out the bounding polygon.
 1. Drag the center sqaure up and down to adjust the threshold of the algorithm.
 1. Drag individual vertices to fine tune the polygon.
 1. Scroll through the slices to propagate segmentation in 3D.
 
-### SAKE tips
+### Saké tips
 - The maximum area of a segment has been capped. The tool rejects attempts to click on a large region or to increase the threshold too much.
 - Thresholds are propagated only to unseen slices. Adjust the threshold before scrolling to nearby slices to propagate the threshold.
 - The **Save** button will send all the polygon segments back to the server.
@@ -108,6 +138,14 @@ To see SAKE in action, check out [demo stack 1](http://104.198.43.42/stack1.json
 
 ## Conclusion
 
+In summary, we made critical enhancements to the open-source annotation platform OHIF, including adding automated 3D segmentation and a Machine Learning pipeline.  The new features will expedite the generation of a dataset that will enable Object Detection algorithms to significantly improve the medical diagnostic procedure both in time and accuracy.  We look forward to radiologists using the new framework in the near future.
+
+Moreover, this project illustrates the potential Computational Science has in applications to the medical sciences.  Saké Viewer can potentially pave the way for revolutionizing the annotation and diagnosis process.  However beyond this, the fact that we found a relatively underutilized dataset, thoroughly cleaned the data, and generated analysis comparable to that produced in medical journal in a relatively short timeframe, illustrates the significant contributions Computational Scientists can have in medicine.
+
+Finally, we would like to offer our warmest gratitude to incredible partners (MGH CCDS), TF (Daniele Foresti), and instructors (Pavlos Protopapas and Eleni Kaxiras) who all made meaningful contributions to this project.
+
+
+#Placeholder: Our Headshots and Contact Us
 
 {% comment %}
 Overview​: Provide an overview of the project. It is important that you include a
