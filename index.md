@@ -1,17 +1,16 @@
-# SAKÉ Viewer 
-## MGH Capstone: Fighting Cancer with a Webapp
+![logos](images/logos.png)
 
-### Introduction
+## Introduction
 
-### Goal 
+## Goal 
 
-### Implementation
+## Implementation
 
-### Data / Machine Learning
+## Data / Machine Learning
 
-### Demo
+## Demo
 
-### Conclusion
+## Conclusion
 
 
 {% comment %} 
