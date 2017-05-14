@@ -6,7 +6,7 @@ Cancer is considered one of the major challenges of humanity in the 21st century
 
 ## Introduction
 
-Prior to being able to contribute to tackling a challenge as difficult as cancer, we first need to understand how experts are currently approaching such problems.  Medical diagnosis is currently heavily reliant on medical images.  Below is an example of a medical image, a computed tomography (CT) scan of a persons lung.  The below is illustrative of a radiologist scrolling through consecutive 2D cross-sectional slices of a persons lung to effectively get a 3D representation of the patients lung.
+Prior to being able to contribute to tackling a challenge as difficult as cancer, we first need to understand how experts are currently approaching such problems.  Medical diagnosis is currently heavily reliant on medical imaging.  Below is an example of medical imaging, a computed tomography (CT) scan of a persons lung.  The below is illustrative of a radiologist scrolling through consecutive adjacent 2D cross-sectional slices of a persons lung to effectively get a 3D representation of the patients lung.
 
 ![CTStack](images/intro/animatedstack.gif){:class="img-responsive"}
 
@@ -14,21 +14,38 @@ Let's put ourselves in the shoes of a radiologist.  The doctor would likely bein
 
 ![QuizQuestion](images/intro/Quiz_5Q.png){:class="img-responsive"}
 
-Below we see the nodule is in the bottom right corner. 
+Below we see the nodule is in the bottom left corner encircled in red. 
 
 ![QuizAnswer](images/intro/Quiz_5A.png){:class="img-responsive"}
 
-Clearly, a human would require considerable training to be able to distinguish between a nodule versus a blood vessel (the other small white objects). However, Computational Science should be able to improve this process. Specifically, by using applying fields such as Machine Learning and Data Science, we should be able to save time, resources, and lives.  In particular, using machine learning would be aggregating the knowledge of thousands of doctors with their multiple years of experience and applying such for each and every diagnosis.  This should drastically improve accuracy and inevitably save lives.
+Clearly, a human would require considerable training to be able to distinguish between a nodule versus a blood vessel (the other small white objects). However, Computational Science should be able to improve this process. Specifically, by using applying fields such as Machine Learning and Data Science, we should be able to save time, resources, and lives.  In particular, using machine learning would be aggregating the knowledge of thousands of doctors with their years of experience and applying such for each and every diagnosis.  This should drastically improve accuracy and inevitably save lives.
 
 The vision of applying Computational Science to improve medical diagnosis is shared with Massachusetts General Hospital (MGH).  MGH is one of the worlds preeminent hospitals, consistently leading medical innovation.  In spring 2016, MGH invested millions of dollars to found the Center for Clinical Data Science bringing together software engineers, doctors, machine learning PhDs, and Data Scientists to turn this vision into a realization.
 
-In truth, machine learning approaches such as Convolutional Neural Networks has led to significant object identification improvements in recent years.  However, these approaches require large amounts of high quality data.  While radiology over the years has generated billions of medical images, the annotations have often been weakly annotated.  Weakly annotated means either a per image annotation (i.e. in this image there is a problem) or as per below where a general region is annotated, but there is no specific pixelwise recording of the problem.
+Machine learning approaches such as Convolutional Neural Networks has led to significant object identification improvements in recent years.  However, these approaches require large amounts of high quality data.  While radiology over the years has generated billions of medical images, the annotations have often been weakly annotated.  Weakly annotated means either a per image annotation (i.e. in this image there is a problem) or as per below where a general region is annotated, but there is no specific pixelwise recording of the problem.
 
 ![WeakData](images/intro/weak_data.png){:class="img-responsive"}
 
 Hence our team seeks to contribute to the field of medical diagnosis by building a standardized annotation framework that will help turn the mass amount of weak data into strong data.
 
+#PLACEHOLDER: GIF of WEAK DATA -> STRONG DATA
+
 ## Goal
+
+With a firm understanding of the current state of medical  form Saké - a precise, fast, and standardized web-based medical imaging annotation framework.  Our ambitious mission is to revolutionize medical diagnosis through machine learning by generating high-quality medical data.
+
+To make this dream a reality, we work with MGH to determine the below specifications of this framework:
+
+-Ability to store, retrieve, and view a range of medical images and corresponding metadata
+-Accessible for radiologists across the globe
+-Standardized, easy-to-use annotation framework
+-Machine Learning pipeline that can be easily upgraded.  Assists doctors in detecting regions of interests (ROIs).
+
+With these specifications, we develop the below schematic as a guide for how to progress:
+
+#PLACEHOLDER: 3 Components schematic
+
+Crucial in our design is that each of the three major components communicate through well-defined interfaces and can be independently exchanged.  This will allow for the framework to be constantly improved.
 
 ## Implementation
 
