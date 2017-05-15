@@ -1,8 +1,8 @@
-![logos](images/logos.png)
+![logos](images/logo5.png)
 
 # Implementation
 
-Let's have closer look the specifications and implementation of the three main components of Saké.
+Let's now have closer look at the specifications and implementation of the three main components of Saké.
 
 ## Image Database Server
 
@@ -12,7 +12,7 @@ Let's have closer look the specifications and implementation of the three main c
 - DICOM (Digital Imaging and Communications in Medicine): The international standard for medical images and related information, allows for image type flexibility
 -  Images accessible to various users across the globe
 
-#PLACEHOLDER: Image Database with XRAY, MRI,CT - need to create a new image
+![ImageDB](images/implementation/image.png){:class="img-responsive"}{: .center-image }
 
 ### Implementation
 
@@ -23,28 +23,33 @@ Let's have closer look the specifications and implementation of the three main c
 
 ### Specifications
 
-- Accessible for radiologists across the globe
+- Accessible to radiologists across the globe
 - Standardized, easy-to-use annotation framework 
 - Automated segmentation and propagation to adjacent slices. 
 - Precise fine-tuning of the segments.
 
+![viewer](images/implementation/viewer.png){:class="img-responsive"}{: .center-image }
+
 ### Implementation
 
-- Investigated Platforms: Stanford’s EPAD, Osirix, Dana Farber’s Imaging Platform
-- Decided on: OHIF Viewer (Open Health Imaging Foundation)
+- Originally, we presume we need to implement the entire front-end from scratch, until we realize there is considerable amount of software readily available
+- Investigate Platforms: Stanford’s EPAD, Osirix, Dana Farber’s Imaging Platform
+- Decide on: OHIF Viewer (Open Health Imaging Foundation) - the standard for open-source medical imaging
+- Javascript and HTML5 canvas API
+- Communicates with REST backend on the ML server via AJAX requests
 
 ## Smart Server
 
 ### Specifications
 
 - Backend of segmentation process for the viewer
-- Machine Learning pipeline that can be easily upgraded,  assists doctors in detecting ROIs
-- Javascript and HTML5 canvas API
-- Communicates with REST backend on the ML server via AJAX requests
+- Machine Learning pipeline that can be easily upgraded
+- ML assists doctors in detecting ROIs
 
 ### Implementation: Segmentation
 
-- Recursive flood-fill algorithm that takes in a seed point and expands the boundaries of an annotation until reaching a given threshold. 2D ROI is propagated to adjacent 2D images on the Z-axis. 
+- Recursive flood-fill algorithm that takes in a seed point and expands the boundaries of an annotation until reaching a given threshold
+- 2D ROI is propagated to adjacent 2D images on the Z-axis. 
 - **Inspiration:** William Gray Roncal, *VESICLE: Volumetric Evaluation of Synaptic Interfaces using Computer vision at Large Scale*
 
 ![segmentation algorithm](images/implementation/segment.gif){:class="img-responsive"}
