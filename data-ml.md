@@ -18,7 +18,7 @@ With ML-usable data now available, we proceed in producing a ML pipeline
 
 ### Implementation: Machine Learning
 
-Given this is but a semester project and our top priority was the segmentation/annotation framework, we have a limited amount of time to produce a Machine Learning pipeline.  We decide on two relatively simplistic yet respectable Machine Learning approaches: 
+Given this is but a semester project and our top priority is the segmentation/annotation framework, we have a limited amount of time to produce a Machine Learning pipeline.  We decide on two relatively simplistic yet respectable Machine Learning approaches: 
 
 - Compute percentiles that the area and location of each ROI falls within using multivariate kernel density estimation. 
 - Predict the probability that a nodule is malignant based off its shape. Approach involves 3-D convolutional neural network that detects the contours of each annotation.

@@ -1,6 +1,6 @@
 ![logos](images/logo5.png)
 
-Let's have closer look at the specifications and implementation of the three main components of Saké.
+Let's have a closer look at the specifications and implementation of the three main components of Saké.
 
 # Image Database Server
 
@@ -32,7 +32,7 @@ Let's have closer look at the specifications and implementation of the three mai
 
 - Originally, we presume we need to implement the entire front-end from scratch, until we realize there is considerable amount of software readily available
 - Investigate Platforms: Stanford’s EPAD, Osirix, Dana Farber’s Imaging Platform
-- Decide on: OHIF Viewer (Open Health Imaging Foundation) - the standard for open-source medical imaging
+- Decide on: OHIF Viewer (Open Health Imaging Foundation) - the leader in open-source web-based medical imaging annotation
 - Javascript and HTML5 canvas API
 - Communicates with REST backend on the ML server via AJAX requests
 
