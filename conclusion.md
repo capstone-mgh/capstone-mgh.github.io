@@ -1,4 +1,4 @@
-![logos](images/logos.png)
+![logos](images/logo5.png)
 
 # Conclusion
 
