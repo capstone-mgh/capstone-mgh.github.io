@@ -36,6 +36,8 @@ Let's have closer look at the specifications and implementation of the three mai
 - Javascript and HTML5 canvas API
 - Communicates with REST backend on the ML server via AJAX requests
 
+![viewer2](images/implementation/viewer2.png){:class="img-responsive"}{: .center-image }
+
 # Smart Server
 
 ### Specifications
@@ -43,6 +45,8 @@ Let's have closer look at the specifications and implementation of the three mai
 - Backend of segmentation process for the viewer
 - Machine Learning pipeline that can be easily upgraded
 - ML assists doctors in detecting ROIs
+
+![smartserver](images/implementation/smartserver.png){:class="img-responsive"}{: .center-image }
 
 ### Implementation: Segmentation
 

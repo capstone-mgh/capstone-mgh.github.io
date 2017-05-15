@@ -1,6 +1,6 @@
 ![logos](images/logo5.png)
 
-# Data / Machine Learning
+# Data
 
 The last feature to be added is the Machine Learning pipeline.  However Saké is the framework that will enable the generation of the data that can be fed into the ML algorithms.  This forces us to look for data of comparable quality.  The National Cancer Institute (NCI) offers DICOM representations of lung cancer screening CT scans and XML-stored pixelwise annotations.  After significant cleaning of the 124GBs of data, the dataset contains 725 patients, 1,201 nodules, and 7,274 region of interest (ROI).
 
@@ -14,11 +14,14 @@ We next visualize the data and find that 1) larger nodules tend to be more likel
 
 With ML-usable data now available, we proceed in producing a ML pipeline
 
-## Smart Server
+# Smart Server
 
 ### Implementation: Machine Learning
 
-- Computes percentiles that the area and location of each ROI falls within using multivariate kernel density estimation. 
- - Predicts the probability that a nodule is malignant based off its shape. Approach involves 3-D convolutional neural network that detects the contours of each annotation.
-- **Inspiration:** Olaf Ronneberger, Philipp Fischer, Thomas Brox, U-Net: Convolutional Networks for Biomedical Image Segmentation 
+Given this is but a semester project, we have a limited amount of time to produce a Machine Learning pipeline.  We settle on the two relatively simplistic yet respectable Machine Learning approaches: 
 
+- Compute percentiles that the area and location of each ROI falls within using multivariate kernel density estimation. 
+- Predict the probability that a nodule is malignant based off its shape. Approach involves 3-D convolutional neural network that detects the contours of each annotation.
+- **Inspiration:** Olaf Ronneberger, Philipp Fischer, Thomas Brox, *U-Net: Convolutional Networks for Biomedical Image Segmentation *
+
+![cnn](images/data/cnn.png){:class="img-responsive"}
