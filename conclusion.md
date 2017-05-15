@@ -6,7 +6,7 @@ In summary, we made critical enhancements to the open-source annotation platform
 
 Moreover, this project illustrates the potential computational science has in applications to the medical sciences.  Saké Viewer can potentially pave the way for revolutionizing the annotation and diagnosis process.  Beyond this, the fact that we found a relatively underutilized dataset, in a relatively short timeframe thoroughly cleaned the data, and generated analysis comparable to that produced in recent medical journals, illustrates the significant contributions computational scientists can have in medicine.
 
-Finally, we offer our warmest gratitude to ourincredible partners (MGH CCDS), TF (Daniele Foresti), and instructors (Pavlos Protopapas and Eleni Kaxiras) who all made extremely meaningful contributions to this project.
+Finally, we offer our warmest gratitude to our incredible partners (MGH CCDS), TF (Daniele Foresti), and instructors (Pavlos Protopapas and Eleni Kaxiras) who all made extremely meaningful contributions to this project.
 
 
 ![team](images/conclusions/team.png){:class="img-responsive"}
