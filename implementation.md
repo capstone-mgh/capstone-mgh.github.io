@@ -1,10 +1,8 @@
 ![logos](images/logo5.png)
 
-# Implementation
+Let's have closer look at the specifications and implementation of the three main components of Saké.
 
-Let's now have closer look at the specifications and implementation of the three main components of Saké.
-
-## Image Database Server
+# Image Database Server
 
 ### Specifications
 
@@ -19,7 +17,7 @@ Let's now have closer look at the specifications and implementation of the three
 - Images stored on Google Cloud, metadata (ordering of stack, patient info, etc) pre-generated through Python script
 - Focus on Lung CT scans due to 1) partner interest 2) problem severity (200k+ new cases in US each year) 3) problem complexity (compared to other medical diagnosis problems, this appears more tractable) 
 
-## Viewer
+# Viewer
 
 ### Specifications
 
@@ -38,7 +36,7 @@ Let's now have closer look at the specifications and implementation of the three
 - Javascript and HTML5 canvas API
 - Communicates with REST backend on the ML server via AJAX requests
 
-## Smart Server
+# Smart Server
 
 ### Specifications
 

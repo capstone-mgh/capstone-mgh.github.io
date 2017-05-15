@@ -1,8 +1,10 @@
-![logos](images/logos.png)
+![logos](images/logo5.png)
 
 # Goal
 
-With a firm understanding of the current state of medical  form Saké - a precise, fast, and standardized web-based medical imaging annotation framework.  Our ambitious mission is to revolutionize medical diagnosis through machine learning by generating high-quality medical data.
+With a firm understanding of the current state of medical diagnosis and where we can make a significant contribution, we form Saké - a precise, fast, and standardized web-based medical imaging annotation framework.  Our ambitious mission is to revolutionize medical diagnosis through machine learning by generating high-quality medical data.
+
+![SakeLogo](images/goal/sakelogo.png){:class="img-responsive"}
 
 To make this dream a reality, we work with MGH to determine the below specifications of this framework:
 

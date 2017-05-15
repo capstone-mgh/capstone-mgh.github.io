@@ -1,4 +1,4 @@
-![logos](images/logo5.png)
+![logos](images/logo4.png)
 
 # Abstract
 
