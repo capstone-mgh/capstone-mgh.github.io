@@ -20,7 +20,7 @@ Massachusetts General Hospital (MGH) similarly envisions applying Computational 
 
 Machine Learning approaches such as Convolutional Neural Networks has led to significant improvements in Object Identification in recent years.  However, these approaches require large amounts of high quality data.  While the field of radiology has generated billions of medical images, the annotations have often been weakly annotated.  Weakly annotated implies there is little-to-no pixelwise recording of the problem.  Instead, in weak data, the annotation may be either per image (effectively stating: *"in this image, there exists a problem"*) or merely reference a vague general location (as per the below image).
 
-![WeakData](images/intro/weak_data.png){:class="img-responsive"}{: .center-image }
+![WeakData](images/intro/weak_data2.png){:class="img-responsive"}{: .center-image }
 
 Hence our team seeks to contribute to the field of medical diagnosis by building a standardized annotation framework that will help turn the mass amount of weak data into strong data.
 
