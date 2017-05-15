@@ -12,7 +12,7 @@ To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.jso
 ### Creating a segmentation with Saké
 1. Click the **Segment** button to activate the tool.
 1. Click on region of interest. The plugin will fill out the bounding polygon.
-1. Drag the center sqaure up and down to adjust the threshold of the algorithm.
+1. Drag the center square up and down to adjust the threshold of the algorithm.
 1. Drag individual vertices to fine tune the polygon.
 1. Scroll through the slices to propagate segmentation in 3D.
 
@@ -23,3 +23,5 @@ To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.jso
 - Dragging a vertex off the slice will delete the whole 3D segment.
 
 ### Screencast: Coming Soon
+
+[Next](http://sakeviewer.com/conclusion.html)
