@@ -9,4 +9,7 @@ Moreover, this project illustrates the potential Computational Science has in ap
 Finally, we offer our warmest gratitude to incredible partners (MGH CCDS), TF (Daniele Foresti), and instructors (Pavlos Protopapas and Eleni Kaxiras) who all made meaningful contributions to this project.
 
 
-#Placeholder: Our Headshots and Contact Us
+![team](images/conclusions/team.png){:class="img-responsive"}
+
+
+**Contact: atsoroka@g.harvard.edu**

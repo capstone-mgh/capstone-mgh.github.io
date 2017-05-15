@@ -46,8 +46,6 @@ Let's have closer look at the specifications and implementation of the three mai
 - Machine Learning pipeline that can be easily upgraded
 - ML assists doctors in detecting ROIs
 
-![smartserver](images/implementation/smartserver.png){:class="img-responsive"}{: .center-image }
-
 ### Implementation: Segmentation
 
 - Recursive flood-fill algorithm that takes in a seed point and expands the boundaries of an annotation until reaching a given threshold
