@@ -12,6 +12,6 @@ Finally, we offer our warmest gratitude to ourincredible partners (MGH CCDS), TF
 ![team](images/conclusions/team.png){:class="img-responsive"}
 
 
-[Home](http://sakeviewer.com/)
-
 **Contact:** *atsoroka@g.harvard.edu*
+
+[Home](http://sakeviewer.com/)
