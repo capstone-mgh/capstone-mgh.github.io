@@ -2,7 +2,7 @@
 
 # Demo
 
-To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.json) or [demo stack 2](http://104.198.43.42/stack2.json).
+To see Saké in action, check out [demo stack 1](http://sakeviewer.shawnpan.com/stack1.json) or [demo stack 2](http://sakeviewer.shawnpan.com/stack2.json).
 
 ### Tips for navigating the OHIF viewer
 - Scroll wheel or up/down arrows to view different slices.
