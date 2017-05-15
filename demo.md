@@ -21,3 +21,5 @@ To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.jso
 - Thresholds are propagated only to unseen slices. Adjust the threshold before scrolling to nearby slices to propagate the threshold.
 - The **Save** button will send all the polygon segments back to the server.
 - Dragging a vertex off the slice will delete the whole 3D segment.
+
+### Screencast: Coming Soon
