@@ -14,4 +14,4 @@ Finally, we offer our warmest gratitude to incredible partners (MGH CCDS), TF (D
 
 **Visit us at:** *sakeviewer.com*
 
-**Contact: atsoroka@g.harvard.edu**
+**Contact:** *atsoroka@g.harvard.edu*
