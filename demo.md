@@ -24,6 +24,4 @@ To see Saké in action, check out [demo stack 1](http://104.198.43.42/stack1.jso
 
 ### Screencast: Coming Soon
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BHhGYtSeItw" frameborder="0" allowfullscreen></iframe>
-
 [Next](http://sakeviewer.com/conclusion.html)
