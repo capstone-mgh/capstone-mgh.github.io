@@ -54,7 +54,7 @@ Let's have a closer look at the specifications and implementation of the three m
 - 2D ROI is propagated to adjacent 2D images on the Z-axis. 
 - **Inspiration:** William Gray Roncal, *VESICLE: Volumetric Evaluation of Synaptic Interfaces using Computer vision at Large Scale*
 
-![segmentation algorithm](images/implementation/segment.gif){:class="img-responsive"}
+![segmentation algorithm](images/implementation/segment.gif)
 
-[Next](http://sakeviewer.com/data-ml.html)
+[Next](http://sakeviewer.com/data.html)
 
