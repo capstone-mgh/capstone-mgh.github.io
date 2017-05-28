@@ -10,7 +10,7 @@ We next visualize the data and find that 1) larger nodules tend to be more likel
 ![Bar](images/data/bar.png){:class="img-responsive"}
 
 **Positional Trends in Nodule Formation**
-![DistAxes](images/data/distributionaxes.png){:class="img-responsive"}
+![DistAxes](images/data/distributionaxes.png)
 
 
 [Next](http://sakeviewer.com/ml.html)
