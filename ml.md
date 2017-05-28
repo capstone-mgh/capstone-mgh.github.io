@@ -9,4 +9,8 @@ Our ML contribution consists of two parts:
 
 ![cnn](images/data/cnn.png)
 
+![1](images/ml/1.png)
+
+![2](images/ml/2.png)
+
 [Next](http://sakeviewer.com/demo.html)
