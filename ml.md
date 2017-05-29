@@ -94,7 +94,7 @@ Finally, to evaluate results, we compare both MSE and residual plots.
 ![loss-shapenet](images/ml/residual_plots_CNN-1.png)
 
 #### Residual Plot of Random Noise
-![loss-noise](images/ml/residual_plots_CNN_random.png)
+![loss-noise](images/ml/residual_plots_random.png)
 
 We would also like to have an R^2-like metric to evaluate our performance. Since an explicit formulation is not available, the closest proxy we can think of is a comparison of residual variance between a random-prediction model and our CNN. 
 
