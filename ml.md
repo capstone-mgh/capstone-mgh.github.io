@@ -99,5 +99,17 @@ Finally, to evaluate results, we compare both MSE and residual plots.
 We would also like to have an R^2-like metric to evaluate our performance. Since an explicit formulation is not available, the closest proxy we can think of is a comparison of residual variance between a random-prediction model and our CNN. 
 
 
+### Results
+
+We aim to investigate how much affect the shape of an annotation has on the probability of malignancy of a proposed region. Using a CNN optimized for performance and speed, we modeled malignancy based off extracted features of the contours and edges in 3D annotations. Our model produces a mean squared error of 0.036774, which is 3.79 times better than random predictions. In addition, the variance of residuals for our model is 0.036771, which is 3.73 times better than random predictions.
+Another way to interpret these results is to look at the mean absolute error of 0.15809, which indicates that on average, the difference between the predicted malignancy probability is about 16% compared to the actual malignancy.
+
+### Discussion
+
+Given the fact that the shape is only one factor in a wide range of considerations for radiologists, our results validate our hypothesis that shape does play a not-insignificant role in the malignancy of a nodule. In particular, this indicates that machine learning researchers and radiologists alike should pay attention to the accuracy and precision at which labels are generated. Tools such as SAKE can play an important role in making sure that this research field is supplied with solid training data.
+
+### Conclusion and Future Work
+
+Our goal is to create a proof-of-concept model that can illustrate the usefulness of deep learning networks in assisting high-quality and accurate nodule annotations. Our models are capable of predicting malignancy probability to within a 16% mean absolute error. We believe that future annotation work can combine radiologists' expertise and augmentative models like ShapeNet to produce substantially better labeled data for machine learning.
 
 [Next](http://sakeviewer.com/demo.html)
