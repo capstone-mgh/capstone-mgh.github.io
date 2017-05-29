@@ -86,6 +86,7 @@ Key takeaways:
 - First, more layers does improve performance. We do not expect 16 or 19 layers to be necessary given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (<1 second/ prediction on GPU), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
 - Second, data augmentation sightly improves performance. However, the difference in loss is slight, meaning that data gained from flipping the images only provides a little more information to the network.
 - Third, we confirm our intuition that the last layer activation choice of ReLU is more appropriate than sigmoid. We prefer a linear activation since we care about producing predictions relatively smoothly from 0 to 1. Meanwhile, a sigmoid activation forces values to either 0 or 1, increasing our error.
+
 <img src="images/ml/functions.png" width="350">
 
 - Finally, we do see that increasing the number of z-axis slices reduces loss. However, this network takes roughly 1.7 times longer to train, which also has implications for prediction time. Therefore, we prefer a smaller network since over 95% of our data can be contained within 10x128x128 box.
@@ -106,9 +107,11 @@ We decide to measure loss using mean squared error since this is a regression pr
 Finally, to evaluate results, we compare both MSE and residual plots.
 
 #### Residual Plot of ShapeNet and Random Noise
+
 <img src="images/ml/residual_plots_CNN-1.png" width="400" style="display:inline;">
 <img src="images/ml/residual_plots_random.png" width="400" style="display:inline;">
-<br />
+
+
 We would also like to have an R^2-like metric to evaluate our performance. Since an explicit formulation is not available, a close proxy is a comparison of residual variance between a random-prediction model and our CNN. 
 
 
