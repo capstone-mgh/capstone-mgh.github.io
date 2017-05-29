@@ -13,6 +13,14 @@ Our ML contribution consists of two parts:
 
 
 ## ShapeNet: a shape-based ConvNet for Malignancy Prediction
+
+### Generated Masks
+
+![gif-1](images/ml/1.gif)
+![gif-2](images/ml/2.gif)
+
+
+
 ### Convolutional Network Architecture
 
 ![ml-architecture](images/ml/1.png)
