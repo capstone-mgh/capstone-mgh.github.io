@@ -99,7 +99,7 @@ We decide to measure loss using mean squared error since this is a regression pr
 
 #### Loss by Models
 
-<img src="images/ml/models.png" width="400">
+<img src="images/ml/models.png" width="800">
 
 
 #### First-layer Kernels
