@@ -102,7 +102,7 @@ Key takeaways:
 
 <img src="images/ml/functions.png" width="350">
 
-- Finally, we do see that increasing the number of z-axis slices reduces loss to some extent. However, this network takes roughly 1.7 times longer to train, which also has implications for prediction time. Prediction also takes 5 times longer (10 samples/second vs 48 samples/ second). Furthermore, the network takes up more space to store and load. Therefore, we prefer a smaller network since over 95% of our data can be contained within 10x128x128 box.
+- Finally, we do see that increasing the number of z-axis slices reduces loss to some extent, as the 20x128x128 input model performs slightly better than the 10x128x128 input model. However, this network takes roughly 1.7 times longer to train, which also has implications for prediction time. Prediction also takes 5 times longer (10 samples/second vs 48 samples/ second). More importantly, for our segmentation tool, it will require us to fill in twice the number of segments, which leads to slower performance. Therefore, we prefer a smaller network since over 95% of our data can be contained within 10x128x128 box, even though it leads to a slightly higher loss.
 
 #### How do we evaluate this model?
 
