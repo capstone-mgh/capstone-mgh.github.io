@@ -90,6 +90,8 @@ While parameter selection and tuning can turn into an infinitely time consuming 
 
 The results of parameter tuning are displayed below (full results in next section):
 
+<img src="images/ml/models.png" width="800">
+
 Key takeaways:
 - First, more layers does improve performance. We do not expect 16 or 19 layers to be necessary given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (42 samples/second), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
 - Second, data augmentation sightly improves performance. However, the difference in loss is slight, meaning that data gained from flipping the images only provides a little more information to the network.
@@ -124,8 +126,6 @@ Finally, to evaluate results, we compare both MSE and residual plots when testin
 <img src="images/ml/residual_plots_CNN-1.png" width="400" style="display:inline;">
 <img src="images/ml/residual_plots_random.png" width="400" style="display:inline;">
 Since an explicit formulation of R^2 not available, we chose a rough proxy by comparing the variance of residuals. In effect, we are measuring the spread of the errors. The variance reported is 0.1373 for random predictions and 0.03677 for our model. Note that the red lines indicate the 95th percentile of values. 
-
-
 
 
 ### Results
