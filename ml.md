@@ -4,10 +4,13 @@
 
 ### Introduction
 
+<div class="img-with-text">
+    <img src="images/ml/0.gif"/>
+    <p>Mal: 5</p>
+</div>
+
 ![gif](images/ml/0.gif)
-Mal: 5
 ![gif](images/ml/1.gif)
-Mal: 5
 ![gif](images/ml/2.gif)
 ![gif](images/ml/3.gif)
 ![gif](images/ml/4.gif)
