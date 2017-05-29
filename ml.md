@@ -21,7 +21,8 @@ We are isolating the effect of annotation shape alone. There are clearly other f
 
 ### Data
 
-We use data from the National Cancer Institute (NCI) that includes a 1-5 malignancy rating on X DICOM images. 
+We use data from the [National Cancer Institute (NCI)](https://wiki.cancerimagingarchive.net/display/Public/LIDC-IDRI) that includes a 1-5 malignancy rating on X DICOM images. 
+
 
 ## Overview
 
@@ -77,12 +78,13 @@ While parameter selection and tuning can turn into an infinitely time consuming 
 The results of parameter tuning are displayed below:
 
 Key takeaways:
-- First, more layers does improve performance. We do not expect 16 or 19 layers to be necessaryy given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (<1 second/ prediction on GPU), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
+- First, more layers does improve performance. We do not expect 16 or 19 layers to be necessary given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (<1 second/ prediction on GPU), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
 - Second, data augmentation sightly improves performance. However, the difference in loss is slight, meaning that data gained from flipping the images only provides a little more information to the network.
 - Third, we confirm our intuition that the last layer activation choice of ReLU is more appropriate than sigmoid. We prefer a linear activation since we care about producing predictions relatively smoothly from 0 to 1. Meanwhile, a sigmoid activation forces values to either 0 or 1, increasing our error.
 - Finally, we do see that increasing the number of z-axis slices reduces loss. However, this network takes roughly 1.7 times longer to train, which also has implications for prediction time. Therefore, we prefer a smaller network since over 95% of our data can be contained within 10x128x128 box.
 
 #### How do we evaluate this model?
+
 We decide to measure loss using mean squared error since this is a regression problem. However, since we are using ReLU, the maximum prediction can be unbounded past 1, so we introduce a slightly modified MSE that clips values greater than 1 to be just 1.
 
 #### First-layer Kernels
@@ -100,7 +102,7 @@ Finally, to evaluate results, we compare both MSE and residual plots.
 #### Residual Plot of Random Noise
 ![loss-noise](images/ml/residual_plots_random.png)
 
-We would also like to have an R^2-like metric to evaluate our performance. Since an explicit formulation is not available, the closest proxy we can think of is a comparison of residual variance between a random-prediction model and our CNN. 
+We would also like to have an R^2-like metric to evaluate our performance. Since an explicit formulation is not available, a close proxy is a comparison of residual variance between a random-prediction model and our CNN. 
 
 
 ### Results
@@ -108,12 +110,9 @@ We would also like to have an R^2-like metric to evaluate our performance. Since
 We aim to investigate how much affect the shape of an annotation has on the probability of malignancy of a proposed region. Using a CNN optimized for performance and speed, we modeled malignancy based off extracted features of the contours and edges in 3D annotations. Our model produces a mean squared error of 0.036774, which is 3.79 times better than random predictions. In addition, the variance of residuals for our model is 0.036771, which is 3.73 times better than random predictions.
 Another way to interpret these results is to look at the mean absolute error of 0.15809, which indicates that on average, the difference between the predicted malignancy probability is about 16% compared to the actual malignancy.
 
-### Discussion
+### Discussion and Future Work
 
-Given the fact that the shape is only one factor in a wide range of considerations for radiologists, our results validate our hypothesis that shape does play a not-insignificant role in the malignancy of a nodule. In particular, this indicates that machine learning researchers and radiologists alike should pay attention to the accuracy and precision at which labels are generated. Tools such as SAKE can play an important role in making sure that this research field is supplied with solid training data.
-
-### Conclusion and Future Work
-
-Our goal is to create a proof-of-concept model that can illustrate the usefulness of deep learning networks in assisting high-quality and accurate nodule annotations. Our models are capable of predicting malignancy probability to within a 16% mean absolute error. We believe that future annotation work can combine radiologists' expertise and augmentative models like ShapeNet to produce substantially better labeled data for machine learning.
+Our results suggest that seeing shape alone can play a significant role in determining the malignancy of a nodule. 
+We believe this information can be very useful in helping radiologists validate the semi-automated segmentations produced by SAKE. Our hope is that ShapeNet and the SAKE ML pipeline can serve as a benchmark for future work in assisting high-quality annotations. In particular, we believe that incorporating image-wise binary classification can be a useful "double-check" mechanism for radiologists. 
 
 [Next](http://sakeviewer.com/demo.html)
