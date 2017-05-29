@@ -16,8 +16,15 @@ Our ML contribution consists of two parts:
 
 ### Generated Masks
 
-![gif-1](images/ml/1.gif)
-![gif-2](images/ml/2.gif)
+![gif](images/ml/1.gif)
+![gif](images/ml/2.gif)
+![gif](images/ml/3.gif)
+![gif](images/ml/4.gif)
+![gif](images/ml/5.gif)
+![gif](images/ml/6.gif)
+![gif](images/ml/7.gif)
+![gif](images/ml/8.gif)
+![gif](images/ml/9.gif)
 
 
 
