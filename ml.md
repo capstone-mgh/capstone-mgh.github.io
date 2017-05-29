@@ -15,9 +15,9 @@
 ![gif](images/ml/6.gif)
 ![gif](images/ml/7.gif)
 
-Malignancy scores (in order): 5, 5, 4, 4, 2, 3, 3
-
 Does the shape of a nodule annotation itself reveal something about malignancy? 
+
+Spoilers: The malignancy scores (in order) are 5, 5, 4, 4, 2, 3, 3
 
 SAKE is an annotation framework aimed at making labeling nodules easier for radiologists. At the very heart of this software is the belief that accurate and standardized annotations are very important for precise algorithms. We aim to provide analytics behind this claim by investigating how annotation shapes affect predicted malignancy.
 
