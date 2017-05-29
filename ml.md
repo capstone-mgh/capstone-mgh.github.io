@@ -95,6 +95,7 @@ The results of parameter tuning are displayed below:
 Key takeaways:
 - First, more layers does improve performance. We do not expect 16 or 19 layers to be necessary given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (<1 second/ prediction on GPU), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
 - Second, data augmentation sightly improves performance. However, the difference in loss is slight, meaning that data gained from flipping the images only provides a little more information to the network.
+
 ![normal](images/ml/normal.png) =>
 ![flipped](images/ml/flipped.png)
 - Third, we confirm our intuition that the last layer activation choice of ReLU is more appropriate than sigmoid. We prefer a linear activation since we care about producing predictions relatively smoothly from 0 to 1. Meanwhile, a sigmoid activation forces values to either 0 or 1, increasing our error.
