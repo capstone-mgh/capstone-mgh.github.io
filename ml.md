@@ -3,7 +3,12 @@
 # Machine Learning
 
 ### Introduction
-
+<style type="text/css">
+.img-with-text {
+display:inline;
+float:left;
+}
+</style>
 <div class="img-with-text">
     <img src="images/ml/0.gif"/>
     <p>Mal: 5</p>
