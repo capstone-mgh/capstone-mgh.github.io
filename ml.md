@@ -3,21 +3,16 @@
 # Machine Learning
 
 ### Introduction
-<style type="text/css">
-.img-with-text {
-display:inline;
-float:left;
-}
-</style>
-<div class="img-with-text">
+
+<div style="display:inline;float:left;">
     <img src="images/ml/0.gif"/>
     <p>Mal: 5</p>
 </div>
-<div class="img-with-text">
+<div style="display:inline;float:left;">
     <img src="images/ml/1.gif"/>
     <p>Mal: 5</p>
 </div>
-<div class="img-with-text">
+<div style="display:inline;float:left;">
     <img src="images/ml/2.gif"/>
     <p>Mal: 5</p>
 </div>
