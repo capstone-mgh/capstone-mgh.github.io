@@ -10,6 +10,7 @@
     <p>Mal: 5</p>
 </div>
 ![gif](images/ml/1.gif)
+Mal: 5
 ![gif](images/ml/2.gif)
 ![gif](images/ml/3.gif)
 ![gif](images/ml/4.gif)
