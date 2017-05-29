@@ -4,18 +4,7 @@
 
 ### Introduction
 
-<div style="display:inline;float:left;">
-    <img src="images/ml/0.gif"/>
-    <p>Mal: 5</p>
-</div>
-<div style="display:inline;float:left;">
-    <img src="images/ml/1.gif"/>
-    <p>Mal: 5</p>
-</div>
-<div style="display:inline;float:left;">
-    <img src="images/ml/2.gif"/>
-    <p>Mal: 5</p>
-</div>
+Malignancy scores (in order): 5, 5, 5, 5, 5, 5
 
 ![gif](images/ml/0.gif)
 ![gif](images/ml/1.gif)
