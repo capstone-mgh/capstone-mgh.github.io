@@ -33,16 +33,16 @@ Our ML contribution consists of two parts:
 
 ![ml-pipeline](images/ml/5.png)
 
-## ShapeNet: a shape-based ConvNet for Malignancy Prediction
+### ShapeNet: a shape-based ConvNet for Malignancy Prediction
 
 - A convolutional neural network model (informally called ShapeNet) that generates malignancy scores based on the user-inputed segmentation shape. 
 
-### How should we model malignancy?
+#### How should we model malignancy?
 - Approach 1: A 5-class classification problem. Since we have 5 classes as our target variable, we can possibly just do a classification of each of the respective five classes. However, the clear issue arises that a neural network does not treat each class as ranked — they would be distinct classes. We do not expect the difference between a 4 rating and 5 rating to be the same as the difference between a 1 ranting and a 5 rating, so the scheme would be a weak approach. In other words, this is not a problem akin to discrimination between a cat and dog.
 - Approach 2: A binary classification problem: We can alternatively just create two classes. Given five classes, we can split the data into [1,2] ratings and [3,4,5] ratings, or [1,2,3] and [4,5] ratings, assigning each a ‘low’ or ‘high’ risk. We were close to implementing our model this way, especially since binary classification methods have easier evaluation regimes. However, we decided against it for two reasons. First, it was not clear that creating a cutoff between low and high risk would be in any way natural — to say that something of a 2 rating was in a different class to something in a 3 rating would still create some of the issues we described above. Second, we wanted to take advantage of the fact that we are in fact given 5 classes and incorporate the relative risk in a meaningful way in the model.
 - Approach 3: A regression problem. This seemed to be the most reasonable approach, with some caveats. First, our data is not continuous, so our predictions would yield some extra loss unless they fell directly on one of the five integers. To remedy this, we normalized our data from 0 to 1, so our new targets were [0.2, 0.4, 0.6, 0.8, 1]. Next, since all our labeled data assumed at least some risk of malignancy, we did not have a ‘0’ class (or a class indicating “no malignancy”). This means even when clicking on a random vesicle that does not have some malignancy, our model tends to still give a non-zero value. Therefore, this means our model does not directly model “risk of malignancy” per se, but rather P(malignancy | region is suspected).
 
-### Generated Masks
+#### Input Generated Masks
 
 The input volume is a 10x128x128 binary mask of the segmentation polygon. Below are 6 samples animated in the z-direction.
 
@@ -54,13 +54,10 @@ The input volume is a 10x128x128 binary mask of the segmentation polygon. Below 
 ![gif](images/ml/6.gif)
 
 
-
-
-### How do we build the architecture?
+#### How do we build the architecture?
 
 We build our CNN with the following architecture:
 
-### Convolutional Network Architecture
 ![ml-architecture](images/ml/1.png)
 
 We perform two convolutions in a row before shrinking the image by half for a total of 8 layers. In our flattened layers, we add a dropout of 50% to allow for generalization. Finally, we use ReLU activation on our final layer to accommodate the fact that we are performing a regression.
