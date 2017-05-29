@@ -8,6 +8,14 @@
     <img src="images/ml/0.gif"/>
     <p>Mal: 5</p>
 </div>
+<div class="img-with-text">
+    <img src="images/ml/1.gif"/>
+    <p>Mal: 5</p>
+</div>
+<div class="img-with-text">
+    <img src="images/ml/2.gif"/>
+    <p>Mal: 5</p>
+</div>
 
 ![gif](images/ml/0.gif)
 ![gif](images/ml/1.gif)
