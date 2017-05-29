@@ -126,6 +126,7 @@ Finally, to evaluate results, we compare both MSE and residual plots when testin
 
 <img src="images/ml/residual_plots_CNN-1.png" width="400" style="display:inline;">
 <img src="images/ml/residual_plots_random.png" width="400" style="display:inline;">
+
 Since an explicit formulation of R^2 not available, we chose a rough proxy by comparing the variance of residuals. In effect, we are measuring the spread of the errors. The variance reported is 0.1373 for random predictions and 0.03677 for our model. Note that the red lines indicate the 95th percentile of values. 
 
 
