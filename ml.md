@@ -9,7 +9,7 @@ Our ML contribution consists of two parts:
 
 ## ML Pipeline
 
-![ml-pipeline](images/ml/3.png)
+![ml-pipeline](images/ml/5.png)
 
 
 ## ShapeNet: a shape-based ConvNet for Malignancy Prediction
