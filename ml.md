@@ -97,12 +97,18 @@ We decide to measure loss using mean squared error since this is a regression pr
 
 <img src="images/ml/clipped.png" width="250">
 
+#### Loss by Models
+
+<img src="images/ml/models.png" width="400">
+
+
 #### First-layer Kernels
 
 <img src="images/ml/kernels.png" width="400">
 
 #### Loss across Epochs
-![loss](images/ml/2.png)
+
+<img src="images/ml/2.png" width="400">
 
 Finally, to evaluate results, we compare both MSE and residual plots.
 
