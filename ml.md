@@ -9,14 +9,15 @@ Our ML contribution consists of two parts:
 
 ## ML Pipeline
 
+![ml-pipeline](images/ml/3.png)
 
 
 ## ShapeNet: a shape-based ConvNet for Malignancy Prediction
 ### Convolutional Network Architecture
 
-![1](images/ml/1.png)
+![ml-architecture](images/ml/1.png)
 
 ### Loss across Epochs
-![2](images/ml/2.png)
+![loss](images/ml/2.png)
 
 [Next](http://sakeviewer.com/demo.html)
