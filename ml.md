@@ -84,10 +84,9 @@ While parameter selection and tuning can turn into an infinitely time consuming 
 
 - Data Augmentation: Previous research has also proven that increasing training data by slightly altering input images improves the network’s ability to generalize.
 
-![normal](images/ml/normal.png)
-Sample Training Data Point
+![normal](images/ml/normal.png) =>
 ![flipped](images/ml/flipped.png)
-Flipped Training Data Point
+
 
 - Last-Layer activation function: The last layer’s activation function is responsible for how we ‘collapse’ the flattened layer before it, which affects how the output of the network is fed into our loss function.
 
