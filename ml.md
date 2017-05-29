@@ -5,6 +5,10 @@
 ### Introduction
 
 ![gif](images/ml/0.gif)
+<div class="img-with-text">
+    <img src="images/ml/0.gif" />
+    <p>Mal: 5</p>
+</div>
 ![gif](images/ml/1.gif)
 ![gif](images/ml/2.gif)
 ![gif](images/ml/3.gif)
