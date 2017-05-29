@@ -71,7 +71,12 @@ While parameter selection and tuning can turn into an infinitely time consuming 
 
 - Data Augmentation: Previous research has also proven that increasing training data by slightly altering input images improves the network’s ability to generalize.
 
+![normal](images/ml/normal.png)
+![flipped](images/ml/flipped.png)
+
 - Last-Layer activation function: The last layer’s activation function is responsible for how we ‘collapse’ the flattened layer before it, which affects how the output of the network is fed into our loss function.
+
+
 
 - Input size: Finally, the size of our input can influence both the memory footprint of our network as well as the amount of data we can feed into the model.
 
@@ -81,11 +86,14 @@ Key takeaways:
 - First, more layers does improve performance. We do not expect 16 or 19 layers to be necessary given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (<1 second/ prediction on GPU), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
 - Second, data augmentation sightly improves performance. However, the difference in loss is slight, meaning that data gained from flipping the images only provides a little more information to the network.
 - Third, we confirm our intuition that the last layer activation choice of ReLU is more appropriate than sigmoid. We prefer a linear activation since we care about producing predictions relatively smoothly from 0 to 1. Meanwhile, a sigmoid activation forces values to either 0 or 1, increasing our error.
+![activation-functions](images/ml/activation-functions.svg)
 - Finally, we do see that increasing the number of z-axis slices reduces loss. However, this network takes roughly 1.7 times longer to train, which also has implications for prediction time. Therefore, we prefer a smaller network since over 95% of our data can be contained within 10x128x128 box.
 
 #### How do we evaluate this model?
 
 We decide to measure loss using mean squared error since this is a regression problem. However, since we are using ReLU, the maximum prediction can be unbounded past 1, so we introduce a slightly modified MSE that clips values greater than 1 to be just 1.
+![activation-clipped](images/ml/clipped.png)
+
 
 #### First-layer Kernels
 
