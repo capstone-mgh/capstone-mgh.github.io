@@ -58,7 +58,7 @@ Our ML contribution consists of two parts:
 
 #### Input Generated Masks
 
-The input volume is a 10x128x128 binary mask of the segmentation polygon. Below are 6 samples animated in the z-direction.
+The input volume is a 10x128x128 binary mask of the segmentation polygon. Below are samples animated in the z-direction.
 
 ![gif](images/ml/0.gif)
 ![gif](images/ml/1.gif)
