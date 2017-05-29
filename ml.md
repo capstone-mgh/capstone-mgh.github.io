@@ -20,4 +20,10 @@ Our ML contribution consists of two parts:
 ### Loss across Epochs
 ![loss](images/ml/2.png)
 
+### Residual Plot of ShapeNet
+![loss-shapenet](images/ml/residual_plots_CNN_2.png)
+
+### Residual Plot of Random Noise
+![loss-noise](images/ml/residual_plots_CNN.png)
+
 [Next](http://sakeviewer.com/demo.html)
