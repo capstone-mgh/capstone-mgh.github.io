@@ -105,9 +105,9 @@ We decide to measure loss using mean squared error since this is a regression pr
 Finally, to evaluate results, we compare both MSE and residual plots.
 
 #### Residual Plot of ShapeNet and Random Noise
-<img src="images/ml/residual_plots_CNN-1.png" width="400">
-<img src="images/ml/residual_plots_random.png" width="400">
-
+<img src="images/ml/residual_plots_CNN-1.png" width="400" style="display:inline;">
+<img src="images/ml/residual_plots_random.png" width="400" style="display:inline;">
+<br />
 We would also like to have an R^2-like metric to evaluate our performance. Since an explicit formulation is not available, a close proxy is a comparison of residual variance between a random-prediction model and our CNN. 
 
 
