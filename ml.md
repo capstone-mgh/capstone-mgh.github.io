@@ -92,6 +92,7 @@ Key takeaways:
 #### How do we evaluate this model?
 
 We decide to measure loss using mean squared error since this is a regression problem. However, since we are using ReLU, the maximum prediction can be unbounded past 1, so we introduce a slightly modified MSE that clips values greater than 1 to be just 1.
+
 <img src="images/ml/clipped.png" width="250">
 
 #### First-layer Kernels
