@@ -117,7 +117,8 @@ The following results are reported with respect to our validation data only.
 <img src="images/ml/kernels.png" width="400">
 
 #### Loss across Epochs
-![loss](images/ml/2.png)
+<img src="images/ml/2.png" width="400">
+
 
 Finally, to evaluate results, we compare both MSE and residual plots when testing on our validation data.
 
