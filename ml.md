@@ -14,10 +14,10 @@ In our analysis, we use convolutional neural networks to detect features about s
 
 We are isolating the effect of annotation shape alone. There are clearly other factors at play when determining malignancy which we do not account for in this network:
 
-- A. Pixelwise intensity in DICOM. A key part of diagnosis is the intensity and thresholds at which certain feature appear within a proposal region.
-- B. Location within lung. We center the annotation region in a box, which in effect removes any localization information in our input data.
-- C. Covariance between neighboring structures. We also do not include information on how many other vesicles or nodules that are nearby, which can be an indication of malignancy as well.
-- D. Out of image context. This refers to any other context a radiologist might use, such as a patient’s previous medical history (eg. smoking, genetics, etc.)
+- Pixelwise intensity in DICOM. A key part of diagnosis is the intensity and thresholds at which certain feature appear within a proposal region.
+- Location within lung. We center the annotation region in a box, which in effect removes any localization information in our input data.
+- Covariance between neighboring structures. We also do not include information on how many other vesicles or nodules that are nearby, which can be an indication of malignancy as well.
+- Out of image context. This refers to any other context a radiologist might use, such as a patient’s previous medical history (eg. smoking, genetics, etc.)
 
 ### Data
 
@@ -46,12 +46,14 @@ Our ML contribution consists of two parts:
 
 The input volume is a 10x128x128 binary mask of the segmentation polygon. Below are 6 samples animated in the z-direction.
 
+![gif](images/ml/0.gif)
 ![gif](images/ml/1.gif)
 ![gif](images/ml/2.gif)
 ![gif](images/ml/3.gif)
 ![gif](images/ml/4.gif)
 ![gif](images/ml/5.gif)
 ![gif](images/ml/6.gif)
+![gif](images/ml/7.gif)
 
 
 #### How do we build the architecture?
