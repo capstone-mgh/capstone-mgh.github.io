@@ -72,7 +72,9 @@ While parameter selection and tuning can turn into an infinitely time consuming 
 - Data Augmentation: Previous research has also proven that increasing training data by slightly altering input images improves the network’s ability to generalize.
 
 ![normal](images/ml/normal.png)
+Sample Training Data Point
 ![flipped](images/ml/flipped.png)
+Flipped Training Data Point
 
 - Last-Layer activation function: The last layer’s activation function is responsible for how we ‘collapse’ the flattened layer before it, which affects how the output of the network is fed into our loss function.
 
@@ -93,32 +95,28 @@ Key takeaways:
 
 #### How do we evaluate this model?
 
-We decide to measure loss using mean squared error since this is a regression problem. However, since we are using ReLU, the maximum prediction can be unbounded past 1, so we introduce a slightly modified MSE that clips values greater than 1 to be just 1.
+We trained and validated our model using a 70/30 split on 1202 total nodule annotations. We decide to measure loss using mean squared error since this is a regression problem. However, since we are using ReLU, the maximum prediction can be unbounded past 1, so we introduce a slightly modified MSE that clips values greater than 1 to be just 1.
+
+The following results are reported with respect to our validation data only.
 
 <img src="images/ml/clipped.png" width="250">
-
-#### Loss by Models
-
-<img src="images/ml/models.png" width="800">
-
 
 #### First-layer Kernels
 
 <img src="images/ml/kernels.png" width="400">
 
 #### Loss across Epochs
+![loss](images/ml/2.png)
 
-<img src="images/ml/2.png" width="400">
-
-Finally, to evaluate results, we compare both MSE and residual plots.
+Finally, to evaluate results, we compare both MSE and residual plots when testing on our validation data.
 
 #### Residual Plot of ShapeNet and Random Noise
 
 <img src="images/ml/residual_plots_CNN-1.png" width="400" style="display:inline;">
 <img src="images/ml/residual_plots_random.png" width="400" style="display:inline;">
+Since an explicit formulation of R^2 not available, we chose a rough proxy by comparing the variance of residuals. In effect, we are measuring the spread of the errors. The variance reported is 0.1373 for random predictions and 0.03677 for our model. Note that the red lines indicate the 95th percentile of values. 
 
 
-We would also like to have an R^2-like metric to evaluate our performance. Since an explicit formulation is not available, a close proxy is a comparison of residual variance between a random-prediction model and our CNN. 
 
 
 ### Results
