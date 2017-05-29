@@ -86,14 +86,12 @@ While parameter selection and tuning can turn into an infinitely time consuming 
 
 - Last-Layer activation function: The last layer’s activation function is responsible for how we ‘collapse’ the flattened layer before it, which affects how the output of the network is fed into our loss function.
 
-
-
 - Input size: Finally, the size of our input can influence both the memory footprint of our network as well as the amount of data we can feed into the model.
 
-The results of parameter tuning are displayed below:
+The results of parameter tuning are displayed below (full results in next section):
 
 Key takeaways:
-- First, more layers does improve performance. We do not expect 16 or 19 layers to be necessary given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (<1 second/ prediction on GPU), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
+- First, more layers does improve performance. We do not expect 16 or 19 layers to be necessary given the simplicity of our training data, so we start with 4 layers and add two more each time. We see that there is only a marginal improvement when we go from 6 layers to 8 layers. Our algorithm performs reasonably fast (42 samples/second), so we can afford 8 layers. However, if speed does become an issue, we note that we can also get similar performance with a 6 layer network.
 - Second, data augmentation sightly improves performance. However, the difference in loss is slight, meaning that data gained from flipping the images only provides a little more information to the network.
 
 ![normal](images/ml/normal.png) =>
@@ -102,7 +100,7 @@ Key takeaways:
 
 <img src="images/ml/functions.png" width="350">
 
-- Finally, we do see that increasing the number of z-axis slices reduces loss. However, this network takes roughly 1.7 times longer to train, which also has implications for prediction time. Therefore, we prefer a smaller network since over 95% of our data can be contained within 10x128x128 box.
+- Finally, we do see that increasing the number of z-axis slices reduces loss to some extent. However, this network takes roughly 1.7 times longer to train, which also has implications for prediction time. Prediction also takes 5 times longer (10 samples/second vs 48 samples/ second). Furthermore, the network takes up more space to store ana load. Therefore, we prefer a smaller network since over 95% of our data can be contained within 10x128x128 box.
 
 #### How do we evaluate this model?
 
