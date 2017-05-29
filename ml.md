@@ -4,7 +4,7 @@
 
 ### Introduction
 
-Malignancy scores (in order): 5, 5, 5, 5, 5, 5
+
 
 ![gif](images/ml/0.gif)
 ![gif](images/ml/1.gif)
@@ -14,6 +14,8 @@ Malignancy scores (in order): 5, 5, 5, 5, 5, 5
 ![gif](images/ml/5.gif)
 ![gif](images/ml/6.gif)
 ![gif](images/ml/7.gif)
+
+Malignancy scores (in order): 5, 5, 4, 4, 2, 3, 3
 
 Does the shape of a nodule annotation itself reveal something about malignancy? 
 
